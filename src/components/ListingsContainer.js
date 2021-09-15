@@ -6,9 +6,10 @@ function ListingsContainer({ listings, onDeleteListing, search, sortBy }) {
 
   let listingsToDisplay;
 
-  const filteredListings = listings.filter((listing) =>
-    listing.description.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredListings = listings.filter((listing) => {
+    // debugger;
+    return listing.description.toLowerCase().includes(search.toLowerCase());
+  });
 
   function sortListings(a, b) {
     if (a[sortBy] < b[sortBy]) {
